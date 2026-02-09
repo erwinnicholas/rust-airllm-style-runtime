@@ -1,0 +1,22 @@
+[package]
+name = "AirLLM_rust"
+version = "0.1.0"
+edition = "2024"
+
+
+[workspace]
+resolver = "2"
+
+# We list the paths to our crates here
+members = [
+    "crates/models",
+    "crates/runtime",
+    "crates/common"
+]
+
+# --- ADD THIS SECTION ---
+[dependencies]
+# This tells Cargo: "When running examples in this folder, link against my local runtime crate"
+runtime = { path = "crates/runtime" }
+models = { path = "crates/models" }   # You will need this later
+common = { path = "crates/common" }   # You will need this later

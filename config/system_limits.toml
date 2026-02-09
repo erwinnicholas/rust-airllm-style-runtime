@@ -1,0 +1,14 @@
+# config/system_limits.toml
+
+[system]
+# The "Physical" RAM we pretend to have (e.g., an embedded device)
+total_system_memory_mb = 1024
+
+[model]
+# The hard limit for the Neural Net weights + activations
+# If the model tries to allocate more than this, the Runtime kills it.
+max_model_memory_mb = 128 
+
+[scheduler]
+# How many layers can sit in RAM at once?
+max_resident_layers = 2
